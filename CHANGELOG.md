@@ -7,6 +7,10 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
+## Unreleased
+
+* Accept and provide link decoration to/from government links ([PR #5511](https://github.com/alphagov/govuk_publishing_components/pull/5511))
+
 ## 67.0.0
 
 * Add options to the details component ([PR #5594](https://github.com/alphagov/govuk_publishing_components/pull/5594))
