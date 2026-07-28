@@ -1,12 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("DOM is ready. Decorating cross-domain links...");
-  
-  document.querySelectorAll('a').forEach(function(link) {
-    // Only decorate links that have an href AND don't contain a hash/anchor
-    if (link.href && !link.href.includes('#')) {
-      link.href += (link.href.includes('?') ? '&' : '?') + 'a=a';
-    }
-  });
+  if (typeof window.GOVUK.analyticsGa4.init === 'function') {
+    window.GOVUK.analyticsGa4.init();
+  }
 });
 
 var initFunction = function () {
@@ -35,8 +30,6 @@ var initFunction = function () {
     const links = document.querySelectorAll('a[href]')
     const allowedDomains = ['example.service.gov.uk', 'micropigs.campaign.gov.uk']
 
-    console.log("in decorate links method")
-
     links.forEach(link => {
       try {
         // Use the URL constructor to safely parse absolute or relative URLs
@@ -55,8 +48,6 @@ var initFunction = function () {
   window.GOVUK.analyticsGa4.checkCookieConsentLinkDecoration(window.location)
 
   var consentCookie = window.GOVUK.getConsentCookie()
-
-  console.log("just before decorate links method called")
 
   if (consentCookie) {
     var consentValue = consentCookie.usage ? 'yes' : 'no'
@@ -83,16 +74,9 @@ var initFunction = function () {
         window.GOVUK.analyticsGa4.analyticsModulesStarted = true
       }
     }
-  } else {
-    window.addEventListener('cookie-consent', window.GOVUK.analyticsGa4.init)
   }
+  window.addEventListener('cookie-consent', window.GOVUK.analyticsGa4.init) 
 }
-
-window.addEventListener('cookie-consent', window.GOVUK.analyticsGa4.init)
-
-window.addEventListener('cookie-consent', function(event) {
-  console.log("THE BUTTON WORKS! Cookie consent event detected.");
-});
 
 window.GOVUK.analyticsGa4.init = initFunction
 
