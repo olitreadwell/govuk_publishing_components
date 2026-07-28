@@ -35,13 +35,15 @@ var initFunction = function () {
     const links = document.querySelectorAll('a[href]')
     const allowedDomains = ['example.service.gov.uk', 'micropigs.campaign.gov.uk']
 
+    console.log("in decorate links method")
+
     links.forEach(link => {
       try {
         // Use the URL constructor to safely parse absolute or relative URLs
         const url = new URL(link.href, window.location.origin)
 
         if (allowedDomains.includes(url.hostname)) {
-          url.searchParams.set('cookies[analytics]', consentValue)
+          url.searchParams.set('cookies[analytics]', consent)
           link.href = url.toString()
         }
       } catch (e) {
@@ -53,6 +55,8 @@ var initFunction = function () {
   window.GOVUK.analyticsGa4.checkCookieConsentLinkDecoration(window.location)
 
   var consentCookie = window.GOVUK.getConsentCookie()
+
+  console.log("just before decorate links method called")
 
   if (consentCookie) {
     var consentValue = consentCookie.usage ? 'yes' : 'no'
@@ -84,5 +88,12 @@ var initFunction = function () {
   }
 }
 
+window.addEventListener('cookie-consent', window.GOVUK.analyticsGa4.init)
+
+window.addEventListener('cookie-consent', function(event) {
+  console.log("THE BUTTON WORKS! Cookie consent event detected.");
+});
+
 window.GOVUK.analyticsGa4.init = initFunction
 
+window.GOVUK.analyticsGa4.init();
