@@ -1,11 +1,10 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function () {
   if (typeof window.GOVUK.analyticsGa4.init === 'function') {
-    window.GOVUK.analyticsGa4.init();
+    window.GOVUK.analyticsGa4.init()
   }
-});
+})
 
 var initFunction = function () {
-  
   window.removeEventListener('cookie-consent', window.GOVUK.analyticsGa4.init)
 
   window.GOVUK.analyticsGa4.checkCookieConsentLinkDecoration = function (location) {
@@ -75,9 +74,9 @@ var initFunction = function () {
       }
     }
   }
-  window.addEventListener('cookie-consent', window.GOVUK.analyticsGa4.init) 
+  window.addEventListener('cookie-consent', window.GOVUK.analyticsGa4.init)
 }
 
 window.GOVUK.analyticsGa4.init = initFunction
 
-window.GOVUK.analyticsGa4.init();
+window.GOVUK.analyticsGa4.init()
