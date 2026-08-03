@@ -92,10 +92,10 @@ $search-icon-height: 20px;
 
 // stylelint-disable max-nesting-depth
 .gem-c-layout-super-navigation-header {
-  background: $govuk-brand-colour;
   border-top: 1px solid $govuk-brand-colour;
   margin-top: -1px;
   position: relative;
+  display: flow-root;
 
   [hidden] {
     display: none;
@@ -551,6 +551,7 @@ $search-icon-height: 20px;
 // Ensure the dropdown menu background is offset from the menu height and
 // takes up the full screen width
 .govuk-frontend-supported .gem-c-layout-super-navigation-header__nav-wrapper {
+  background: $govuk-brand-colour;
   position: relative;
 
   &::before {
