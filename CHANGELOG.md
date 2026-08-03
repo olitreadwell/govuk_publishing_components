@@ -7,6 +7,10 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
+## Unreleased
+
+* Use the details component for toggling element visibility in the metadata component ([PR #5592](https://github.com/alphagov/govuk_publishing_components/pull/5592))
+
 ## 67.0.0
 
 * Add options to the details component ([PR #5594](https://github.com/alphagov/govuk_publishing_components/pull/5594))
