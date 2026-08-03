@@ -7,6 +7,10 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
+## Unreleased
+
+* Improve Devolved Nations Component Welsh Support ([PR #5633](https://github.com/alphagov/govuk_publishing_components/pull/5633))
+
 ## 67.0.0
 
 * Add options to the details component ([PR #5594](https://github.com/alphagov/govuk_publishing_components/pull/5594))
