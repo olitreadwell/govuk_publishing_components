@@ -36,17 +36,25 @@ examples:
     data:
       omit_footer_navigation: true
   navigation:
-    description: Passes the navigation through to the [super navigation header component](/component-guide/layout_super_navigation_header/).
+    description: Passes the navigation through to the [cross service header](/component-guide/cross_service_header/).
     data:
-      navigation_items:
-      - text: Navigation item 1
-        href: "item-1"
-        active: true
-      - text: Navigation item 2
-        href: "item-2"
-      - text: Hidden on desktop
-        href: "item-3"
-        show_only_in_collapsed_menu: true
+      show_cross_service_header: true
+      service_name: "My Service Name"
+      one_login_navigation_items:
+        one_login_home:
+          href: "#"
+        one_login_sign_out:
+          href: "#"
+        navigation_items: []
+      service_navigation_items:
+        - text: Navigation item 1
+          href: "item-1"
+          active: true
+        - text: Navigation item 2
+          href: "item-2"
+        - text: Hidden on desktop
+          href: "item-3"
+          show_only_in_collapsed_menu: true
   with_global_banner:
     description: This allows the HTML for the global banner to be added to the page within the header element. This is only the slot for the global banner - the markup for the banner needs to be passed in.
     data:
