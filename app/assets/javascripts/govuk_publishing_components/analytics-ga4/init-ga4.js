@@ -27,7 +27,11 @@ var initFunction = function () {
   window.GOVUK.analyticsGa4.decorateLinks = function (consent) {
     // Select all anchor tags with an href attribute
     const links = document.querySelectorAll('a[href]')
-    const allowedDomains = ['example.service.gov.uk', 'micropigs.campaign.gov.uk']
+    const allowedDomains = [
+      'end-to-end-journeys-545890405086.europe-west2.run.app', 
+      'x-domain-prototype-2-545890405086.europe-west2.run.app',
+      'x-domain-prototype-3-545890405086.europe-west2.run.app'
+    ]
 
     links.forEach(link => {
       try {
